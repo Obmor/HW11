@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-
-class Homework {
+public class Main {
 //
 // Method of Ex1.
     public static void defineYear (int yearInMethod) {
@@ -42,21 +40,25 @@ class Homework {
             day = 2;
         } else if (distance > 60 && distance <= 100) {
             day = 3;
-        } else {
-            throw new RuntimeException("Внимание: ДОСТАВКИ НЕТ!!!");
         }
         return day;
     }
 //
 // Massages printing
     public static void printMassageOfDelivery(int days) {
-        System.out.println("Потребуется дней: " + days + ".");
+        if (days <= 3 && days !=0) {
+            System.out.println("Потребуется дней: " + days + ".");
+        } else {
+            System.out.println("Доставки нет.");
+        }
     }
 //
 // Empty strings
     public static void addEmptyString () {
         System.out.println();
     }
+//
+// Exercises
     public static void main(String[] args) {
         System.out.println("Exercise 1.");
         int year = 1704;
@@ -70,7 +72,7 @@ class Homework {
         addEmptyString();
 
         System.out.println("Ex3.");
-        int deliveryDistance = 10;
+        int deliveryDistance = 50;
         int totalDays = day(deliveryDistance);
         printMassageOfDelivery(totalDays);
         addEmptyString();
